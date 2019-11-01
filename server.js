@@ -4,7 +4,12 @@ var xfdf = require('xfdf')
 
 var builder = new xfdf({ pdf: './Resignation.pdf' });
 
-builder.addField('firstname', 'John');
+builder.fromJSON({fields: {
+      age: 32,
+      tall: true,
+      name: 'John Doe'
+    }
+  });
 
 console.log(builder.generate());
 app.listen({port: 5000}, ()=>{
